@@ -1,0 +1,33 @@
+{
+  "name": "@khalypso/astro-analytics",
+  "version": "1.0.0",
+  "description": "Analytics integration for Astro",
+  "type": "module",
+  "author": "Mathieu KHALEM <mathieu@khalypso.fr>",
+  "keywords": [
+    "astro",
+    "astro-integration",
+    "analytics",
+    "stats",
+    "tracking"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/khalypso-fr/astro-analytics.git"
+  },
+  "license": "MIT",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "files": [
+    "src",
+    "index.ts"
+  ],
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5",
+    "astro": "^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0"
+  }
+}
