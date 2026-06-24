@@ -1,13 +1,14 @@
-import type { CommonToolOptions } from "../types";
+import type { CommonToolOptions, SnippetFunction } from "../tool-types";
+import { generateTypeForScript } from "../utils";
 
 export interface GoogleToolOptions extends CommonToolOptions {
     tagId: string;
 }
 
-export const googleSnippet = ({tagId, partytown}: GoogleToolOptions) => {
+export const googleSnippet: SnippetFunction<GoogleToolOptions> = ({tagId, partytown}) => {
     return `
     <!-- Google tag (gtag.js) -->
-    <script async ${partytown ? `type="text/partytown" ` : ""}src="https://www.googletagmanager.com/gtag/js?id=${tagId}"></script>
+    <script async type=${generateTypeForScript(partytown)} src="https://www.googletagmanager.com/gtag/js?id=${tagId}"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}

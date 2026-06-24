@@ -5,3 +5,5 @@ type Entries<T> = {
 export function entriesFromObject<T extends object>(object: T): Entries<T> {
   return Object.entries(object) as Entries<T> & {};
 }
+
+export const generateTypeForScript = (partytown: boolean) => `"text/${partytown ? "partytown" : "javascript"}"`
