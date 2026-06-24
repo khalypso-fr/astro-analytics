@@ -1,15 +1,46 @@
-# astro-analytics
+# @khalypso/astro-analytics
 
-To install dependencies:
+Lightweight Astro integration to inject analytics snippets (Google Analytics, Matomo). Configure only the tools you need — the integration accepts a partial map of available tools.
 
-```bash
-bun install
-```
+## Quick start
 
-To run:
+### Install dependencies:
 
 ```bash
-bun run index.ts
+bun astro add @khalypso/astro-analytics
 ```
 
-This project was created using `bun init` in bun v1.3.14. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+## Usage (Astro)
+
+In your `astro.config.*`:
+
+```ts
+import analytics from "@khalypso/astro-analytics";
+
+export default {
+	integrations: [
+		analytics({
+			enabled: true, // True by default
+			tools: {
+				google: { tagId: "G-XXXXXXX" },
+				// you can omit tools you don't use
+			}
+		})
+	]
+}
+```
+
+## API
+
+- **enabled**: boolean — enable/disable injection at runtime.
+- **tools**: partial map of tool options. Only the tools you define will be injected.
+
+## Development
+
+Build the package:
+
+```bash
+bun run build
+```
+
+License MIT
