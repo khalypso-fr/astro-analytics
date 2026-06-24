@@ -1,15 +1,15 @@
-import type { CommonToolOptions, SnippetFunction } from "../tool-types";
-import { generateTypeForScript } from "../utils";
+import type { SnippetFunction } from "../tool-types";
 
-export interface MatomoToolOptions extends CommonToolOptions {
-    siteUrl?: string;
-    siteId: string;
+export interface MatomoToolOptions {
+	siteUrl?: string;
+	siteId: string;
 }
 
-export const matomoSnippet: SnippetFunction<MatomoToolOptions> = ({siteUrl, siteId, partytown}) => {
-    return `
-<!-- Matomo -->
-<script type=${generateTypeForScript(partytown)}>
+export const matomoSnippet: SnippetFunction<MatomoToolOptions> = ({
+	siteUrl,
+	siteId,
+}) => {
+	return `
   var _paq = window._paq = window._paq || [];
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
@@ -20,9 +20,5 @@ export const matomoSnippet: SnippetFunction<MatomoToolOptions> = ({siteUrl, site
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
     g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
   })();
-</script>
-<!-- End Matomo Code -->
-`
-}
-
-
+`;
+};

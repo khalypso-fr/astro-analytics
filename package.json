@@ -1,51 +1,52 @@
 {
-  "name": "@khalypso/astro-analytics",
-  "description": "Analytics integration for Astro",
-  "version": "1.0.0",
-  "type": "module",
-  "files": [
-    "src",
-    "index.ts",
-    "dist"
-  ],
-  "module": "./dist/index.js",
-  "main": "./dist/index.cjs",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      },
-      "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/index.cjs"
-      }
-    },
-    "./package.json": "./package.json"
-  },
-  "author": "Mathieu KHALEM <mathieu@khalypso.fr>",
-  "keywords": [
-    "astro",
-    "astro-integration",
-    "analytics",
-    "stats",
-    "tracking"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/khalypso-fr/astro-analytics.git"
-  },
-  "license": "MIT",
-  "scripts": {
-    "build": "bunup"
-  },
-  "devDependencies": {
-    "@types/bun": "latest",
-    "bunup": "^0.16.32"
-  },
-  "peerDependencies": {
-    "typescript": "^5",
-    "astro": "^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0"
-  }
+	"name": "@khalypso/astro-analytics",
+	"description": "Analytics integration for Astro",
+	"version": "1.0.0",
+	"type": "module",
+	"files": [
+		"src",
+		"index.ts",
+		"dist"
+	],
+	"module": "./dist/index.js",
+	"main": "./dist/index.cjs",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": {
+				"types": "./dist/index.d.ts",
+				"default": "./dist/index.js"
+			},
+			"require": {
+				"types": "./dist/index.d.cts",
+				"default": "./dist/index.cjs"
+			}
+		},
+		"./package.json": "./package.json"
+	},
+	"author": "Mathieu KHALEM <mathieu@khalypso.fr>",
+	"keywords": [
+		"astro",
+		"astro-integration",
+		"analytics",
+		"stats",
+		"tracking"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/khalypso-fr/astro-analytics.git"
+	},
+	"license": "MIT",
+	"scripts": {
+		"build": "bunup"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.5.1",
+		"@types/bun": "latest",
+		"bunup": "^0.16.32"
+	},
+	"peerDependencies": {
+		"typescript": "^5",
+		"astro": "^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0"
+	}
 }
