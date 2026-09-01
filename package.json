@@ -38,15 +38,14 @@
 	},
 	"license": "MIT",
 	"scripts": {
-		"build": "bunup"
+		"build": "tsup"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.5.1",
-		"@types/bun": "latest",
-		"bunup": "^0.16.32"
+		"@biomejs/biome": "2.5.11",
+		"tsup": "^8.5.1"
 	},
 	"peerDependencies": {
-		"typescript": "^5 || ^6 || ^7",
-		"astro": "^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0"
+		"astro": "^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0",
+		"typescript": "^5 || ^6 || ^7"
 	}
 }
