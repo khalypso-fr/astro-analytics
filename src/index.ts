@@ -16,7 +16,7 @@ const analytics = ({
 	return {
 		name: "@khalypso/astro-analytics",
 		hooks: {
-			"astro:config:setup": async ({ injectScript }) => {
+			"astro:config:setup": async (ctx) => {
 				if (!enabled) return;
 				for (const [toolKey, toolOptions] of entriesFromObject(tools)) {
 					const toolDefinition = toolsDefinitions[toolKey] as SnippetFunction<
@@ -26,7 +26,8 @@ const analytics = ({
 					const snippets =
 						typeof generated === "string" ? [generated] : generated;
 					for (const snippet of snippets) {
-						injectScript("head-inline", snippet);
+						ctx.injectScript("head-inline", snippet);
+						ctx.logger.info(`Injected snippet for tool: ${toolKey}`);
 					}
 				}
 			},
